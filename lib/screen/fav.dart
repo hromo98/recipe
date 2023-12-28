@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Favourites extends StatefulWidget {
   const Favourites({super.key});
- 
+
   @override
   State<Favourites> createState() => _FavouritesState();
 }
@@ -10,12 +10,9 @@ class Favourites extends StatefulWidget {
 class _FavouritesState extends State<Favourites> {
   @override
   Widget build(BuildContext context) {
-    return 
-       
-      Text(
-          'Moye moye',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        );
+    return Text(
+      'Moye moye',
+      style: TextStyle(fontWeight: FontWeight.bold),
+    );
   }
-  }      
- 
+}

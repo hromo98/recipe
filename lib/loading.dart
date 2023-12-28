@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/homepage.dart';
+import 'package:recipe/dashboard.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -21,7 +21,7 @@ class _LoadingPageState extends State<LoadingPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => HomePage(),
+        builder: (context) => Dashboard(),
       ),
     );
   }
