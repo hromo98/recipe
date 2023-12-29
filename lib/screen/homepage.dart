@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipe/screen/ingridient.dart';
+import 'package:recipe/screen/detailspage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,7 +18,8 @@ oil for greasing,
 3tsp oil''',
       'discription':
           'Momos are a type of steamed filled dumpling in Tibetan and Nepali cuisine that is also popular in neighbouring Bhutan and India. Momos are usually served with a sauce known as achar influenced by the spices and herbs used within many South Asian',
-//       // 'thumbnail': 'vvv',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/220px-Momo_nepal.jpg',
     },
     {
       'title': 'sandwish',
@@ -32,7 +33,8 @@ Mustard
 Salt and pepper to taste''',
       'discription':
           'A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein bread serves as a container or wrapper for another food type.[1][2][3] The sandwich began as a portable, convenient finger food in the Western world, though over time it has become prevalent worldwide.',
-      // 'thumbnail': 'vvv',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bologna_sandwich.jpg/250px-Bologna_sandwich.jpg',
     },
     {
       'title': 'roast chicken',
@@ -53,7 +55,8 @@ Fresh herbs (rosemary, thyme, and sage) for stuffing (optional)
 1 cup chicken broth or water, for basting''',
       'discription':
           'Roast chicken is chicken prepared as food by roasting whether in a home kitchen, over a fire, or with a rotisserie (rotary spit). Generally, the chicken is roasted with its own fat and juices by circulating the meat during roasting, and therefore, are usually cooked exposed to fire or heat with some type of rotary grill so that the circulation of these fats and juices is as efficient as possible. Roast chicken is a dish that appears in a wide variety of cuisines worldwide.',
-      // 'thumbnail': 'vvv',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Chicken_dinner.jpg/300px-Chicken_dinner.jpg',
     },
     {
       'title': 'porkchop',
@@ -67,50 +70,49 @@ Salt and black pepper to taste
 Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
       'discription':
           'A pork chop, like other meat chops, is a loin cut taken perpendicular to the spine of the pig and is usually a rib or part of a vertebra. Pork chops are unprocessed and leaner than other cuts.[1] Chops are commonly served as an individual portion, and can be accompanied with applesauce, vegetables, and other sides. Pork is one of the most commonly consumed meats in the world.[1][2] In the United States, pork chops are the most commonly consumed meat cut from the pork loin and account for 10% of total pork consumption',
-      // 'thumbnail': 'vvv',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/C%C3%B4tes_de_porc_marin%C3%A9es%2C_cuites_au_barbecue%2C_mars_2020_%28006%29.jpg/220px-C%C3%B4tes_de_porc_marin%C3%A9es%2C_cuites_au_barbecue%2C_mars_2020_%28006%29.jpg',
     },
-    {
-      'title': 'porkbbq',
-      'ingridient': '''Ingredients:
-2 lbs pork shoulder or pork butt, trimmed and cut into 2-inch cubes
-1 cup BBQ sauce (store-bought or homemade)
-2 tablespoons olive oil
-2 tablespoons soy sauce
-2 tablespoons Worcestershire sauce
-2 tablespoons brown sugar
-1 tablespoon Dijon mustard
-3 cloves garlic, minced
-1 teaspoon smoked paprika
-1 teaspoon onion powder
-1 teaspoon black pepper
-1/2 teaspoon cayenne pepper (adjust to taste)
-Salt to taste''',
-      'discription':
-          ' Pork Barbecue are marinated in a sweet, savory sauce and skewered in bamboo sticks. These meat kebabs are seriously addictive!',
-      // 'thumbnail': 'vvv',
-    },
-    {
-      'title': 'paratha',
-      'ingridient': '''3 cups all-purpose flour, plus more for dusting,
- 1 3/4 teaspoons kosher salt
- 1 tablespoon neutral oil, such as canola, plus more as needed
- 1 cup warm water
- 3/4 cup ghee''',
-      'discription':
-          'Paratha is a flatbread native to South Asia, with earliest reference mentioned in early medieval Sanskrit text from Karnataka, India; prevalent throughout the modern-day nations of India, Sri Lanka,',
-      // 'thumbnail': 'vvv',
-    },
-    {
-      'title': 'kher',
-      'ingridient': '''5 cups milk (full fat) ((Or almond milk if vegan))
-1/4 cup water
-1/2 cup basmati rice ((Or any medium grain white rice, rinsed))
-1/2 cup sugar (adjust to taste)
-1/4 cup almonds (sliced)''',
-      'discription':
-          ' Pork Barbecue are marinated in a sweet, savory sauce and skewered in bamboo sticks. These meat kebabs are seriously addictive!',
-      // 'thumbnail': 'vvv',
-    },
+//     {
+//       'title': 'porkbbq',
+//       'ingridient': '''Ingredients:
+// 2 lbs pork shoulder or pork butt, trimmed and cut into 2-inch cubes
+// 1 cup BBQ sauce (store-bought or homemade)
+// 2 tablespoons olive oil
+// 1 tablespoon Dijon mustard
+// 3 cloves garlic, minced
+// 1 teaspoon smoked paprika
+// 1 teaspoon onion powder
+// 1 teaspoon black pepper
+// 1/2 teaspoon cayenne pepper (adjust to taste)
+// Salt to taste''',
+//       'discription':
+//           ' Pork Barbecue are marinated in a sweet, savory sauce and skewered in bamboo sticks. These meat kebabs are seriously addictive!',
+//       'thumbnail':
+//           'https://en.wikipedia.org/wiki/Pork_tenderloin#/media/File:Pork_tenderloin_dish.png',
+//     },
+//     {
+//       'title': 'paratha',
+//       'ingridient': '''3 cups all-purpose flour, plus more for dusting,
+//  1 3/4 teaspoons kosher salt
+//  1 tablespoon neutral oil, such as canola, plus more as needed
+//  1 cup warm water
+//  3/4 cup ghee''',
+//       'discription':
+//           'Paratha is a flatbread native to South Asia, with earliest reference mentioned in early medieval Sanskrit text from Karnataka, India; prevalent throughout the modern-day nations of India, Sri Lanka,',
+//       // 'thumbnail': 'vvv',
+//     },
+//     {
+//       'title': 'kher',
+//       'ingridient': '''5 cups milk (full fat) ((Or almond milk if vegan))
+// 1/4 cup water
+// 1/2 cup basmati rice ((Or any medium grain white rice, rinsed))
+// 1/2 cup sugar (adjust to taste)
+// 1/4 cup almonds (sliced)''',
+//       'discription':
+//           ' Pork Barbecue are marinated in a sweet, savory sauce and skewered in bamboo sticks. These meat kebabs are seriously addictive!',
+    // 'thumbnail': 'vvv',
+    // },
 
 // not included
 //     {
@@ -212,8 +214,8 @@ Salt to taste''',
                               ClipRRect(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
-                                child: Image.asset(
-                                  'assets/vegmomo.jpeg',
+                                child: Image.network(
+                                  Itemlist[index]["thumbnail"],
                                   height: 150,
                                   width: 100,
                                   fit: BoxFit.cover,
@@ -248,39 +250,26 @@ Salt to taste''',
                                       fontSize: 15),
                                 ),
                               ),
-                              SizedBox(
-                                width: 200,
-                                child: Text(
-                                  maxLines: 5,
-                                  overflow: TextOverflow.clip,
-                                  '${Itemlist[index]["ingridient"]}',
-                                  style: TextStyle(
-                                      fontSize:
-                                          MediaQuery.of(context).size.width /
-                                              25),
-                                ),
-                              ),
-                              Container(
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                    height: 100,
-                                    width:
-                                        MediaQuery.of(context).size.width / 2,
-                                    child: InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => Ingridient(),
-                                          ),
-                                        );
-                                      },
-                                    ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Detailspage(
+                                          details: Itemlist[index],
+                                        ),
+                                      ));
+                                },
+                                child: SizedBox(
+                                  width: 200,
+                                  child: Text(
+                                    maxLines: 5,
+                                    overflow: TextOverflow.clip,
+                                    '${Itemlist[index]["discription"]}',
+                                    style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                25),
                                   ),
                                 ),
                               ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/screen/fav.dart';
 import 'package:recipe/screen/homepage.dart';
-import 'package:recipe/screen/ingridient.dart';
+import 'package:recipe/screen/detailspage.dart';
+import 'package:recipe/useraccount.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -19,7 +20,7 @@ class _DashboardState extends State<Dashboard> {
     // Ingridient(),
     HomePage(),
     Favourites(),
-    Ingridient()
+    Myaccount()
 
     // Add more screens as needed
   ];
@@ -46,7 +47,8 @@ class _DashboardState extends State<Dashboard> {
             NavigationDestination(icon: Icon(Icons.home_filled), label: 'Home'),
             NavigationDestination(
                 icon: Icon(Icons.bookmark), label: 'Favourites'),
-            NavigationDestination(icon: Icon(Icons.feed), label: 'Ingridient')
+            NavigationDestination(
+                icon: Icon(Icons.account_circle_rounded), label: 'Ingridient')
           ],
         ),
       ),
