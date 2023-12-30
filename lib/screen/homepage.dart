@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/screen/detailspage.dart';
+import 'package:recipe/screen/fav.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,13 +10,80 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Map> favoritesList = [
+    {
+      'title': 'momo',
+      'ingridient': '''1 cup maida / plain flour,           
+1/2 tsp salt water for kneading,
+oil for greasing,
+3tsp oil,
+300g maida''',
+      'discription':
+          'Momos are a type of steamed filled dumpling in Tibetan and Nepali cuisine that is also popular in neighbouring Bhutan and India. Momos are usually served with a sauce known as achar influenced by the spices and herbs used within many South Asian',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Momo_nepal.jpg/220px-Momo_nepal.jpg',
+    },
+    {
+      'title': 'sandwish',
+      'ingridient': '''2 slices of your favorite bread
+4-6 slices of turkey
+2 slices of your preferred cheese
+Lettuce leaves
+Tomato slices
+Mayonnaise
+Mustard
+Salt and pepper to taste''',
+      'discription':
+          'A sandwich is a food typically consisting of vegetables, sliced cheese or meat, placed on or between slices of bread, or more generally any dish wherein bread serves as a container or wrapper for another food type.[1][2][3] The sandwich began as a portable, convenient finger food in the Western world, though over time it has become prevalent worldwide.',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Bologna_sandwich.jpg/250px-Bologna_sandwich.jpg',
+    },
+    {
+      'title': 'roast chicken',
+      'ingridient': '''1 whole chicken (about 4-5 pounds)
+Salt and pepper, to taste
+2 teaspoons paprika
+1 teaspoon garlic powder
+1 teaspoon onion powder
+1 teaspoon dried thyme
+1 teaspoon dried rosemary
+1/2 teaspoon dried oregano
+1/2 teaspoon dried sage
+1/4 cup olive oil
+1 lemon, halved
+1 onion, quartered
+4 cloves garlic, peeled
+Fresh herbs (rosemary, thyme, and sage) for stuffing (optional)
+1 cup chicken broth or water, for basting''',
+      'discription':
+          'Roast chicken is chicken prepared as food by roasting whether in a home kitchen, over a fire, or with a rotisserie (rotary spit). Generally, the chicken is roasted with its own fat and juices by circulating the meat during roasting, and therefore, are usually cooked exposed to fire or heat with some type of rotary grill so that the circulation of these fats and juices is as efficient as possible. Roast chicken is a dish that appears in a wide variety of cuisines worldwide.',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Chicken_dinner.jpg/300px-Chicken_dinner.jpg',
+    },
+    {
+      'title': 'porkchop',
+      'ingridient': '''4 pork chops (bone-in or boneless)
+Salt and black pepper to taste
+1 teaspoon garlic powder
+1 teaspoon paprika
+1/2 teaspoon dried thyme
+2 tablespoons olive oil
+2 tablespoons unsalted butter
+Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
+      'discription':
+          'A pork chop, like other meat chops, is a loin cut taken perpendicular to the spine of the pig and is usually a rib or part of a vertebra. Pork chops are unprocessed and leaner than other cuts.[1] Chops are commonly served as an individual portion, and can be accompanied with applesauce, vegetables, and other sides. Pork is one of the most commonly consumed meats in the world.[1][2] In the United States, pork chops are the most commonly consumed meat cut from the pork loin and account for 10% of total pork consumption',
+      'thumbnail':
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/C%C3%B4tes_de_porc_marin%C3%A9es%2C_cuites_au_barbecue%2C_mars_2020_%28006%29.jpg/220px-C%C3%B4tes_de_porc_marin%C3%A9es%2C_cuites_au_barbecue%2C_mars_2020_%28006%29.jpg',
+    },
+  ];
   final List<Map> Itemlist = [
     {
       'title': 'momo',
       'ingridient': '''1 cup maida / plain flour,          
 1/2 tsp salt water for kneading,
 oil for greasing,
-3tsp oil''',
+3tsp oil,
+300g maida''',
       'discription':
           'Momos are a type of steamed filled dumpling in Tibetan and Nepali cuisine that is also popular in neighbouring Bhutan and India. Momos are usually served with a sauce known as achar influenced by the spices and herbs used within many South Asian',
       'thumbnail':
@@ -227,12 +295,21 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                                 child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      (Icons.bookmark);
+                                      if (favoritesList.contains(
+                                          Itemlist[index])) {
+                                        favoritesList.remove(Itemlist[index]);
+                                      } else {
+                                        favoritesList.add(Itemlist[index]);
+                                      }
                                     });
                                   },
                                   highlightColor:
                                       Color.fromARGB(255, 214, 174, 30),
-                                  icon: Icon(Icons.bookmark_border),
+                                  icon: Icon(
+                                    favoritesList.contains(Itemlist[index])
+                                        ? Icons.bookmark
+                                        : Icons.bookmark_border,
+                                  ),
                                 ),
                               ),
                             ],

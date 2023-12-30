@@ -19,8 +19,8 @@ class _DashboardState extends State<Dashboard> {
     // Favourites(),
     // Ingridient(),
     HomePage(),
-    Favourites(),
-    Myaccount()
+    Favourites(favoritesList: [],),
+    Myaccount(),
 
     // Add more screens as needed
   ];
