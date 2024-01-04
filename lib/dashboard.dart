@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe/screen/fav.dart';
 import 'package:recipe/screen/homepage.dart';
-import 'package:recipe/screen/detailspage.dart';
+
 import 'package:recipe/useraccount.dart';
 
 class Dashboard extends StatefulWidget {
@@ -19,7 +19,7 @@ class _DashboardState extends State<Dashboard> {
     // Favourites(),
     // Ingridient(),
     HomePage(),
-    Favourites(favoritesList: [],),
+    Favourites(),
     Myaccount(),
 
     // Add more screens as needed

@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:recipe/favouriteActivity.dart';
 import 'package:recipe/loading.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (context) => FavouriteActivity(),
+      )
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
