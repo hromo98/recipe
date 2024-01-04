@@ -20,8 +20,10 @@ class _FavouritesState extends State<Favourites> {
         itemCount: favourite.favouritesList.length,
         itemBuilder: (context, index) {
           return Card(
-            child: Image.network(
+            child:Column(children: [Image.network(
                 favourite.favouritesList[index]["image"]),
+                Text(favourite.favouritesList[index]['description'])],)
+            , 
           );
         },
       ),

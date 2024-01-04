@@ -171,7 +171,7 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                                     const EdgeInsets.symmetric(vertical: 10),
                                 child: IconButton(
                                   onPressed: () {
-                                    favourite.addToFavourite(Itemlist[index]["thumbnail"],Itemlist[index]["description"]);
+                                    favourite.addToFavourite(Itemlist[index]["thumbnail"],Itemlist[index]["discription"]);
                                   },
                                   highlightColor:
                                       Color.fromARGB(255, 214, 174, 30),
