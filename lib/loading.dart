@@ -16,12 +16,13 @@ class _LoadingPageState extends State<LoadingPage> {
   }
 
   void startTimer() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 3));
 
-    Navigator.push(
+    // ignore: use_build_context_synchronously
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => Dashboard(),
+        builder: (context) => const Dashboard(),
       ),
     );
   }
@@ -32,7 +33,7 @@ class _LoadingPageState extends State<LoadingPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Center(
+          const Center(
             child: Text(
               'RECIPES',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
@@ -43,7 +44,7 @@ class _LoadingPageState extends State<LoadingPage> {
             width: 200,
             child: Image.asset('assets/image1.jpg'),
           ),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
@@ -58,8 +59,8 @@ class _LoadingPageState extends State<LoadingPage> {
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
+          const Padding(
+            padding: EdgeInsets.all(15.0),
             child: LinearProgressIndicator(),
           ),
         ],

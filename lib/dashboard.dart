@@ -15,14 +15,9 @@ class _DashboardState extends State<Dashboard> {
   int _currentIndex = 0;
 
   final screens = [
-    // HomePage(),
-    // Favourites(),
-    // Ingridient(),
-    HomePage(),
-    Favourites(),
-    Myaccount(),
-
-    // Add more screens as needed
+    const HomePage(),
+    const Favourites(),
+    const Myaccount(),
   ];
 
   @override
@@ -40,54 +35,17 @@ class _DashboardState extends State<Dashboard> {
           height: 60,
           backgroundColor: Colors.amberAccent.shade400,
           selectedIndex: _currentIndex,
-          onDestinationSelected: (_currentIndex) => setState(() {
-            this._currentIndex = _currentIndex;
+          onDestinationSelected: (currentIndex) => setState(() {
+            _currentIndex = currentIndex;
           }),
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home_filled), label: 'Home'),
             NavigationDestination(
                 icon: Icon(Icons.bookmark), label: 'Favourites'),
-            NavigationDestination(
-                icon: Icon(Icons.account_circle_rounded), label: 'Ingridient')
+            NavigationDestination(icon: Icon(Icons.store), label: 'About')
           ],
         ),
       ),
-
-      //
-      // bottomnavigationBar:BottomNavigationBar(items:
-      //   [BottomNavigationBarItem(icon: Icon(Icons.camera ))]);
-
-      // BottomNavigationBar(
-      //  currentIndex: _currentIndex,
-
-      //  backgroundColor: Colors.blue[200],
-      //  type: BottomNavigationBarType.fixed,
-      //  selectedItemColor: Colors.blueAccent,
-      //  unselectedItemColor: Colors.amber,
-      //  items: <BottomNavigationBarItem>[
-      //    BottomNavigationBarItem(
-      //      icon: Icon(Icons.home),
-      //      label: 'Home',
-
-      //    ),
-      //    // BottomNavigationBarItem(
-      //    //   icon: Icon(Icons.search),
-      //    //   label: 'search',
-      //    // ),
-      //    BottomNavigationBarItem(
-      //      icon: Icon(Icons.bookmark),
-      //      label: 'fav',
-      //    ),
-      //    BottomNavigationBarItem(
-      //      icon: Icon(Icons.camera_alt_outlined),
-      //      label: 'ingridient',
-      //    ),
-      //  ],
-      //   )
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
