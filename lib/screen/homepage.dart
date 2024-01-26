@@ -103,7 +103,7 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                           alignment: Alignment.topLeft,
                           transform: Matrix4.rotationZ(-0.3),
                           child: Image.asset(
-                            'chef.jpg',
+                            'assets/chef.jpg',
                             height: 40,
                             width: 40,
                             fit: BoxFit.contain,
@@ -155,8 +155,8 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                             Stack(
                               children: [
                                 ClipRRect(
-                                  borderRadius:
-                                      const BorderRadius.all(Radius.circular(10)),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(10)),
                                   child: Image.network(
                                     itemlist[index]["thumbnail"],
                                     height: 150,
@@ -165,36 +165,38 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                                   ),
                                 ),
                                 Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10),
                                     child: Consumer<favouriteactivity>(
                                         builder: (context, provider, child) {
                                       return IconButton(
                                         onPressed: () {
-                                          Provider.of<favouriteactivity>(context,
-                                                  listen: false)
-                                              .addToFavourite(
-                                                {
-                                                  "thumbnail" : '${itemlist[index]["thumbnail"]}',
-                                                  "title" : '${itemlist[index]["title"]}',
-                                                  "quantity" : 0
-                                                  }
-                                               );
-    
-                                          // provider.addToFavourite(
-                                          //   Itemlist[index]["thumbnail"],
-                                          //   Itemlist[index]["title"],
-                                          //   Itemlist[index]["discription"],
-                                          // );
+                                          var existingItem = provider
+                                              .favourriteitem
+                                              .firstWhere(
+                                            (item) =>
+                                                item["title"] ==
+                                                itemlist[index]["title"],
+                                            orElse: () => null,
+                                          );
+
+                                          if (existingItem == null) {
+                                            provider.addToFavourite({
+                                              "thumbnail": itemlist[index]
+                                                  ["thumbnail"],
+                                              "title": itemlist[index]["title"],
+                                              "quantity": 1
+                                            });
+                                          }
                                         },
-                                        highlightColor:
-                                            const Color.fromARGB(255, 214, 174, 30),
+                                        highlightColor: const Color.fromARGB(
+                                            255, 214, 174, 30),
                                         icon: Column(
                                           children: [
                                             Icon(
                                               Icons.bookmark,
-                                              color: provider.favourriteitem.any(
-                                                      (favItem) =>
+                                              color: provider.favourriteitem
+                                                      .any((favItem) =>
                                                           favItem["title"] ==
                                                           itemlist[index]
                                                               ["title"])
@@ -204,6 +206,42 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                                           ],
                                         ),
                                       );
+
+                                      // return IconButton(
+                                      //   onPressed: () {
+                                      //     Provider.of<favouriteactivity>(context,
+                                      //             listen: false)
+                                      //         .addToFavourite(
+                                      //           {
+                                      //             "thumbnail" : '${itemlist[index]["thumbnail"]}',
+                                      //             "title" : '${itemlist[index]["title"]}',
+                                      //              "quantity" : 1
+                                      //             }
+                                      //          );
+
+                                      //     // provider.addToFavourite(
+                                      //     //   Itemlist[index]["thumbnail"],
+                                      //     //   Itemlist[index]["title"],
+                                      //     //   Itemlist[index]["discription"],
+                                      //     // );
+                                      //   },
+                                      //   highlightColor:
+                                      //       const Color.fromARGB(255, 214, 174, 30),
+                                      //   icon: Column(
+                                      //     children: [
+                                      //       Icon(
+                                      //         Icons.bookmark,
+                                      //         color: provider.favourriteitem.any(
+                                      //                 (favItem) =>
+                                      //                     favItem["title"] ==
+                                      //                     itemlist[index]
+                                      //                         ["title"])
+                                      //             ? Colors.amber
+                                      //             : Colors.black,
+                                      //       ),
+                                      //     ],
+                                      //   ),
+                                      // );
                                     })),
                               ],
                             ),
@@ -237,9 +275,10 @@ Fresh herbs (such as thyme or rosemary) for garnish (optional)''',
                                       overflow: TextOverflow.clip,
                                       '${itemlist[index]["discription"]}',
                                       style: TextStyle(
-                                          fontSize:
-                                              MediaQuery.of(context).size.width /
-                                                  25),
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              25),
                                     ),
                                   ),
                                 ),

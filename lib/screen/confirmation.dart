@@ -18,7 +18,7 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 200, width: 200, child: Lottie.asset('assets/lottie.json')),
+            SizedBox(height: 200, width: 200, child: Lottie.asset('assets/lottie.json',repeat: false)),
             const Text(
               ' You have successfully Order',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -31,7 +31,7 @@ class _ConfirmationPageState extends State<ConfirmationPage> {
               style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20),
             ),
             IconButton(
-              onPressed: () => Navigator.pop(
+              onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const Dashboard(),
